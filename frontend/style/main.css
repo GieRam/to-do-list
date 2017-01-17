@@ -1,0 +1,25 @@
+.task-input-wrapper {
+  padding: 40px 20px 0 20px;
+}
+
+.task-list-wrapper {
+  padding: 20px;
+}
+
+.task-list {
+  padding:0px;
+}
+
+.list-group-item {
+ padding: 10px 10px 50px 10px;
+}
+
+.task-icon {
+  float: right;
+  padding: 5px;
+}
+
+.fa-trash-o {
+  position: relative;
+  top: -1px;
+}
