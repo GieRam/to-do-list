@@ -32,10 +32,10 @@ router.route('/:task_id')
       if(error) {
         res.send(error);
       }
-      task.label = req.body.label;
-      task.content = req.body.content;
-      task.completed = req.body.completed;
-      task.save(function(error) {
+      result.label = req.body.label;
+      result.content = req.body.content;
+      result.completed = req.body.completed;
+      result.save(function(error) {
         if(error) {
           res.send(error);
         }
