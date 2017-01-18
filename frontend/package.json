@@ -12,6 +12,7 @@
   "dependencies": {
     "angular": "^1.6.1",
     "angular-ui-bootstrap": "^2.4.0",
+    "angular-xeditable": "^0.6.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.15.0",
