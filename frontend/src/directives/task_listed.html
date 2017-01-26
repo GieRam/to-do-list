@@ -1,4 +1,4 @@
-<div class='list-wrapper'>
+<div class="list-wrapper">
   <hr>
   <h3>To do list</h3>
   <br/>
@@ -28,7 +28,6 @@
       <div class="editTask-form-wrapper" ng-if="task.editing">
         <form ng-submit="edit()">
           <input type="text" class="input-field" ng-model="task.content" require>
-          <task-color-tag></task-color-tag>
           <button type="submit" class="btn btn-success">Add</button>
           <button class="btn btn-secondary">Cancel</button>
         </form>

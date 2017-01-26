@@ -52,7 +52,7 @@ export default function(){
     replace: true,
     controller: controller,
     scope: {
-      tasksObj: "="
+      tasksObj: '='
     }
    }
 };
