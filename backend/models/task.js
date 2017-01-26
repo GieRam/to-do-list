@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const TaskSchema = new Schema({
   content: String,
-  label: String,
-  completed: Boolean
+  important: Boolean,
+  completed: Boolean,
+  tag: ''
 });
 
 module.exports = mongoose.model('Task', TaskSchema);

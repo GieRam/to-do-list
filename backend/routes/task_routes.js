@@ -15,9 +15,10 @@ router.route('/')
   })
   .post(function(req, res) {
     let task = new Task();
-    task.label = req.body.label;
+    task.important = req.body.important;
     task.content = req.body.content;
     task.completed = req.body.completed;
+    task.tag = req.body.tag;
     task.save(function(error) {
       if(error) {
         res.send(error);
@@ -32,9 +33,10 @@ router.route('/:task_id')
       if(error) {
         res.send(error);
       }
-      result.label = req.body.label;
+      result.important = req.body.important;
       result.content = req.body.content;
       result.completed = req.body.completed;
+      result.tag = req.body.tag;
       result.save(function(error) {
         if(error) {
           res.send(error);
