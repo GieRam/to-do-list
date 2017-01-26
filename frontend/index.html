@@ -1,66 +1,29 @@
+<!DOCTYPE html>
 <html ng-app="myApp">
-  <head>
-    <meta charset="utf-8">
-    <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
-  </head>
-  <body>
-      <header>
-        <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">AngularJS To do list</a>
-          </div>
-        </div>
-        </nav>
-      </header>
-
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To do app</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="body-wrapper">
+    <header>
+      <nav class="navbar navbar-default">
       <div class="container">
-        <div ng-controller="mainController">
-          <form class="form-inline task-input-wrapper" ng-submit="addTask()">
-            <input type="text" class="form-control" placeholder="To do" ng-model="task" required>
-            <button type="submit" class="btn btn-primary">Add</button>
-          </form>
-          <div class="task-list-wrapper row">
-            <div class='col-md-6 list-wrapper'>
-              <h3>Do do list</h3>
-              <hr>
-              <div class="alert alert-success" role="alert" ng-if="tasks.length === 0">
-                <strong>Add a task!</strong> Here you will see the list of them. <br/> Don't worry. You will be able to edit or delete them anytime.
-              </div>
-              <ul class="task-list">
-                <li ng-repeat="task in tasks" class=" list-group-item task" ng-if="task.completed === false">
-                  <div editable-text="task.content" e-form="textBtnForm" e-required>
-                    {{task.content}}
-                    <a href="#" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">
-                      <i class="fa fa-pencil-square-o task-icon" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" ng-click="delete()">
-                      <i class="fa fa-trash-o task-icon" aria-hidden="true"></i>
-                    </a>
-                    <a href="#" ng-click="done()">
-                      <i class="fa fa-square-o" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <div class='col-md-6 list-wrapper'>
-                <h3>Done</h3>
-                <hr>
-                <ul class="task-list">
-                <li ng-repeat="task in tasks" class=" list-group-item task" ng-if="task.completed === true">
-                  {{task.content}}
-                  <a href="#" ng-click="delete()">
-                    <i class="fa fa-trash-o task-icon" aria-hidden="true"></i>
-                  </a>
-                </li>
-              </ul>
-              </div>
-            </div>
-          </div>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">AngularJS To do list</a>
         </div>
       </div>
+      </nav>
+    </header>
 
-  </body>
+    <div class="container">
+      <div ng-controller="taskController">
+        <task-create tasks-obj="tasks"></task-create>
+        <task-listed tasks-obj="tasks"></task-listed>
+        <task-done-listed tasks-obj="tasks"></task-done-listed>
+      </div>
+    </div>
+  <script src="bundle.js"></script>
+</body>
 </html>

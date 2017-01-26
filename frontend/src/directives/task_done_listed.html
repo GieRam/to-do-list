@@ -1,0 +1,17 @@
+<div class="taskDoneListed">
+  <div class="btn-secondary-wrapper">
+    <button class="btn btn-secondary" ng-if="tasks.length !== 0" ng-click="doneList.isShowDoneOpen = !doneList.isShowDoneOpen">
+      <span ng-show="!doneList.isShowDoneOpen">Show done</span>
+      <span ng-show="doneList.isShowDoneOpen">Hide done</span>
+    </button>
+  </div>
+  <br/>
+  <ul ng-init="doneList.isShowDoneOpen = false" class="task-list" ng-show="doneList.isShowDoneOpen">
+    <li ng-repeat="task in tasksObj" class="list-group-item task" ng-if="task.completed === true">
+      {{task.content}}
+      <a href="#" ng-click="delete()">
+        <i class="fa fa-trash-o task-icon" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>

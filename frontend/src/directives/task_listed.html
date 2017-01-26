@@ -1,0 +1,38 @@
+<div class='list-wrapper'>
+  <hr>
+  <h3>To do list</h3>
+  <br/>
+  <div class="alert alert-success" role="alert" ng-if="tasksObj.length === 0">
+    <strong>Add a task!</strong> Here you will see the list of them. <br/> Don't worry. You will be able to edit or delete them anytime.
+  </div>
+  <ul class="task-list">
+    <li ng-repeat="task in tasksObj" class="list-group-item task" ng-if="task.completed === false">
+      <div ng-if="!task.editing">
+        {{task.content}}
+        <a href="#" ng-click="editFieldOpen()">
+          <i class="fa fa-pencil-square-o task-icon" aria-hidden="true"></i>
+        </a>
+        <a href="#" ng-click="delete()">
+          <i class="fa fa-trash-o task-icon" aria-hidden="true"></i>
+        </a>
+        <a href="#" ng-click="done()">
+          <i class="fa fa-circle-thin task-icon fa-lg" aria-hidden="true" ng-hide="task.checked === true"></i>
+          <i class="fa fa-check-circle-o task-icon fa-lg" aria-hidden="true" ng-if="task.checked === true"></i>
+        </a>
+        <a href="#" ng-click="changeImportance()" >
+          <i class="fa fa-star-o task-icon" aria-hidden="true" ng-if="task.important === false"></i>
+          <i class="fa fa-star task-icon" aria-hidden="true" ng-if="task.important === true"></i>
+        </a>
+        <div ng-if="task.tag" class="tag" style="background-color:{{task.tag}}"></div>
+      </div>
+      <div class="editTask-form-wrapper" ng-if="task.editing">
+        <form ng-submit="edit()">
+          <input type="text" class="input-field" ng-model="task.content" require>
+          <task-color-tag></task-color-tag>
+          <button type="submit" class="btn btn-success">Add</button>
+          <button class="btn btn-secondary">Cancel</button>
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>

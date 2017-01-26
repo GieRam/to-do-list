@@ -1,0 +1,10 @@
+<form class="task-input-wrapper" ng-submit="addTask()">
+  <input type="text" class="input-field addTask-input" placeholder="Add a to-do..." ng-model="content" required>
+  <!-- <task-color-tag ng-model="task.color"></task-color-tag> -->
+  <div class="tags-wrapper">
+    <a href="#" ng-repeat="tag in tags" >
+     <i class="fa fa-tag fa-lg" aria-hidden="true" style="color:{{tag}}" ng-click="setColor(tag)"></i>
+    </a>
+  </div>
+  <button type="submit" class="btn btn-main">Add</button>
+</form>
